@@ -1,19 +1,21 @@
 package com.brinkus.labs.neo4j.health.unmanaged;
 
 import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.parallel.ResourceLock;
+import org.junit.jupiter.api.parallel.Resources;
 import org.neo4j.harness.Neo4j;
 import org.neo4j.harness.Neo4jBuilders;
-import org.neo4j.test.rule.SuppressOutput;
+import org.neo4j.test.extension.SuppressOutputExtension;
 import org.neo4j.test.server.HTTP;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+@ExtendWith(SuppressOutputExtension.class)
+@ResourceLock(Resources.SYSTEM_OUT)
 public class HealthResourceITest {
-
-    @Rule
-    public SuppressOutput suppressOutput = SuppressOutput.suppressAll();
 
     @Test
     public void healthUp() throws Exception {

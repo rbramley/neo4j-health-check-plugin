@@ -1,6 +1,6 @@
 # Health Check Plugin for Neo4j
 
-## Neo4j version 4.x
+## Neo4j version 5.x
 
 The target database name needs to be specified as a path parameter e.g. */labs/health/neo4j*
 
