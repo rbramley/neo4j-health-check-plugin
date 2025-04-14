@@ -25,6 +25,15 @@ The health check has 4 different results depending from the server's state:
 
 ## Installation
 
+### Neo4j (5.0+)
+
+`NEO4J_HOME/conf/neo4j.conf`
+
+```
+dbms.security.auth_enabled=false
+server.unmanaged_extension_classes=com.brinkus.labs.neo4j.health.unmanaged=/labs
+```
+
 ### Neo4j (3.0+)
 
 `NEO4J_HOME/conf/neo4j.conf`
